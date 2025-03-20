@@ -1,17 +1,27 @@
 package oo2.ej2.parte1;
 
-public class Tijeras implements Elemento {
-    private String nombre;
-
-    public Tijeras(){
-        this.nombre = "Tijeras";
+public class Tijeras extends Elemento {
+    public Tijeras() {
+        super("Tijeras");
     }
 
-    public String getNombre(){
-        return this.nombre;
+    @Override
+    public String jugarContraPiedra() {
+        return "Perdiste";
     }
 
-    public boolean ganaA(Elemento contrincante){
-        return contrincante instanceof Papel;
+    @Override
+    public String jugarContraTijera() {
+        return "Empate";
+    }
+
+    @Override
+    public String jugarContraPapel() {
+        return "Ganaste";
+    }
+
+    @Override
+    public String jugarContra(Elemento elemento) {
+        return elemento.jugarContraTijera();
     }
 }

@@ -1,4 +1,4 @@
-package oo2.ej2.parte1;
+package oo2.ej2.parte2;
 
 public abstract class Elemento {
     private String nombre;
@@ -7,11 +7,15 @@ public abstract class Elemento {
         this.nombre = nombre;
     }
 
-    public abstract String jugarContraPiedra();
+    public abstract String jugarContraPapel();
 
     public abstract String jugarContraTijera();
 
-    public abstract String jugarContraPapel();
+    public abstract String jugarContraPiedra();
+
+    public abstract String jugarContraLagarto();
+
+    public abstract String jugarContraSpock();
 
     public abstract String jugarContra(Elemento elemento);
 }

@@ -19,7 +19,7 @@ public class Usuario {
     }
 
     public void eliminarTweets() {
-        this.tweets.clear();
+        this.tweets = new ArrayList<>();
     }
 
     public void retweet(Tweet origen, String texto) {
