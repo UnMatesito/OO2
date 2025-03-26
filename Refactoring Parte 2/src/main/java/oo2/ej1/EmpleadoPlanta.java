@@ -1,10 +1,13 @@
 package oo2.ej1;
 
-public class EmpleadoPlanta extends Empleado{
-    public int cantidadHijos = 0;
+public class EmpleadoPlanta extends EmpleadoConHijos{
     // ......
 
-    public double sueldo() {
-        return this.sueldoBasico + (this.cantidadHijos * 2000) - (this.sueldoBasico * 0.13);
+    public EmpleadoPlanta(String nombre, String apellido, double sueldoBasico, int cantidadHijos) {
+        super(nombre,apellido,sueldoBasico,cantidadHijos);
+    }
+
+    public double remuneracionPorHijos() {
+        return super.getCantidadHijos() * 2000;
     }
 }
