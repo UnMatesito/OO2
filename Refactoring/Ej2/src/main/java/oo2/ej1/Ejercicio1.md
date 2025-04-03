@@ -50,13 +50,13 @@ public class EmpleadoPasante {
 
 ## Duplicate Code
 En todas las clases del ejercicio se repite mucho codigo, donde se repiten los mensajes y variables de instancia de las clases de empleados.
-**Solucion**: Pull Up Field y Pull Up Method, creando una clase abstracta `Empleado`
+**Solucion**: Extract Method, Extract Superclass, Pull Up Field y Pull Up Method, creando una clase abstracta `Empleado`
 
 ## No usar constructor para inicializar variables de instancia
-En las clase abstacta `Empleado` no se provee de un constructor para inicializar las variables `nombre` y `apellido`.
+En la clase abstacta `Empleado` no se provee de un constructor para inicializar las variables `nombre` y `apellido`.
 **Solucion**: Crear un constructor en la clase `Empleado` que inicialice las variables `nombre` y `apellido`.
 
 ## Duplicate Code
 En las clases `EmpleadoPlanta` y `EmpleadoPasante` se posee de la variable de instacia `int cantidadHijos` por lo tanto se esta repitiendo la misma variable de instancia en 2 Clases
-**Solucion**: Pull up Field, creando una clase abstracta `EmpleadoConHijos` que extienda a `Empleado` creando asi una doble herencia.
+**Solucion**: Extract Method, Extract Superclass y Pull up Field, creando una clase abstracta `EmpleadoConHijos` que extienda a `Empleado` creando asi una doble herencia.
 

@@ -3,21 +3,24 @@ package oo2.ej3;
 import java.util.List;
 
 public class Document {
-    List<String> words;
+    private List<String> words;
 
     public long characterCount() {
-        long count = this.words
+        return this.words
                 .stream()
                 .mapToLong(w -> w.length())
                 .sum();
-        return count;
     }
     public long calculateAvg() {
-        long avgLength = this.words
-                .stream()
-                .mapToLong(w -> w.length())
-                .sum() / this.words.size();
-        return avgLength;
+        return (long) characterCount() / this.words.size();
+    }
+
+    public List<String> getWords() {
+        return words;
+    }
+
+    public void setWords(List<String> words) {
+        this.words = words;
     }
 // Resto del código que no importa
 }
