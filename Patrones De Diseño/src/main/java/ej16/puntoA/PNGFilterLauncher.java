@@ -9,7 +9,6 @@ import java.util.Map;
 
 import javax.imageio.ImageIO;
 
-import ej16.imageFilters.*;
 import ej16.puntoA.imageFilters.*;
 
 public class PNGFilterLauncher {

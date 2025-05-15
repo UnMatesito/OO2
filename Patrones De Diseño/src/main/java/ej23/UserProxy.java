@@ -2,29 +2,27 @@ package ej23;
 
 import java.util.List;
 
-public class UserProxy implements PersistableUser{
-    private User user;
+public class UserProxy extends User implements PersistableUser{
 
-    public UserProxy(User user) {
-        this.user = user;
-        this.user.setPosts(null);
+    public UserProxy(String username, String email) {
+        super(username, email);
     }
 
     @Override
     public String getUsername() {
-        return this.user.getUsername();
+        return super.getUsername();
     }
 
     @Override
     public String getEmail() {
-        return this.user.getEmail();
+        return super.getEmail();
     }
 
     @Override
     public List<Post> getPosts() {
-        if (this.user.getPosts() == null){
-            this.user.setPosts(new PostRepository().findPostsByUsername(this.user.getUsername()));
+        if (super.getPosts() == null){
+            super.setPosts(new PostRepository().findPostsByUsername(super.getUsername()));
         }
-        return this.user.getPosts();
+        return super.getPosts();
     }
 }

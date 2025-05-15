@@ -16,7 +16,7 @@ public class UserRepository {
 			return usersData.stream()
 					.filter(userData -> userData.get("username").equals(aUsername))
 					.findFirst()
-					.map(userData -> new User((String) userData.get("username"), (String) userData.get("email")))
+					.map(userData -> new UserProxy((String) userData.get("username"), (String) userData.get("email")))
 					.orElse(null);
 		} catch (Exception e) {
 			return null;

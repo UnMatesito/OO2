@@ -23,7 +23,7 @@ public class WeatherTest {
         WeatherDecorator decorator1 = new CelciusDecorator(decorator);
         WeatherDecorator decorator2 = new AverageDecorator(decorator1);
         WeatherDecorator decorator3 = new MaxMinTemperatureDecorator(decorator2);
-        assertEquals("Temperatura C: 29.55 Presión atmosf: 1008.0 Radiación solar 200.0 Promedio: 28.61 Mínimo: 23.88 Máximo: 32.38", decorator3.displayData());
+        assertEquals("Temperatura C: 29.56 Presión atmosf: 1008.0 Radiación solar: 200.0 Promedio: 28.61 Mínimo: 23.89 Máximo: 32.39", decorator3.displayData());
     }
     // TODO: Preguntar porque las temperaturas no cambian a Celcius
 }

@@ -2,7 +2,7 @@ package ej22;
 
 public class Purge extends ProcessStep{
     @Override
-    protected boolean basicExecute(MixingTank tank) {
+    protected boolean basicExecute(MixingTank tank) throws InterruptedException {
         if (tank.isUpTo() == 0) {
             return false;
         }
