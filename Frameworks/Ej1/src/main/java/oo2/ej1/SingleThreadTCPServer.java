@@ -70,7 +70,20 @@ public abstract class SingleThreadTCPServer {
         }
     }
 
-    protected abstract void processClientMessages(Socket clientSocket, BufferedReader in, PrintWriter out) throws IOException;
+    protected void processClientMessages(Socket clientSocket, BufferedReader in, PrintWriter out) throws IOException{
+        String inputLine;
+        while ((inputLine = in.readLine()) != null) {
+            receivedCommunicaction(inputLine, clientSocket);
+            if (inputLine.equalsIgnoreCase("")) {
+                break; // Client requested to close the connection
+            }
+            handleMessage(inputLine, out);
+        }
+    }
+
+    protected void receivedCommunicaction(String inputLine, Socket clientSocket) {
+        System.out.println("Received message: " + inputLine + " from " + clientSocket.getInetAddress().getHostAddress() + ":" + clientSocket.getPort());
+    }
 
     protected void communicationProblemMessage(IOException e) {
         System.err.println("Problem with communication with client: " + e.getMessage());
