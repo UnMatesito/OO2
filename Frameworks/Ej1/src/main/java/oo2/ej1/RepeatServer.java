@@ -2,7 +2,7 @@ package oo2.ej1;
 
 import java.io.PrintWriter;
 
-public class PasswordServer extends SingleThreadTCPServer {
+public class RepeatServer extends SingleThreadTCPServer{
     private String[] args;
 
     @Override
@@ -10,10 +10,9 @@ public class PasswordServer extends SingleThreadTCPServer {
 
     }
 
-
     public static void main(String[] args) {
 
-        new PasswordServer().startLoop(args);
+        new RepeatServer().startLoop(args);
 
     }
 }
